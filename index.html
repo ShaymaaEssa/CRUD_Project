@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/mediaQuery.css">
+</head>
+<body>
+    <section class="py-5">
+        <div class="container rounded py-4">
+            <h1 class="text-center text-info">Product Management System</h1>
+
+            <div class="inputs">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control border-0 border-bottom border-danger" id="ProductName" placeholder="">
+                    <label for="ProductName">Product Name</label>
+                  </div>
+                  <div id="validate-name-alert" class="alert alert-danger d-none">Product Name must start with Capital letter, then letters from 2 to 8!</div>
+                  <div id="empty-name-alert" class="alert alert-danger d-none">Product Name Can't Be Empty!</div>
+
+                  <div class="form-floating mb-3">
+                    <input type="number" class="form-control border-0 border-bottom border-danger" id="ProductPrice" placeholder="">
+                    <label for="ProductPrice">Product Price</label>
+                  </div>
+
+                  <div id="validate-price-alert" class="alert alert-danger d-none">Price must be from 10,000$ to 50,000$</div>
+                  <div id="empty-price-alert" class="alert alert-danger d-none">Product Price Can't Be Empty!</div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control border-0 border-bottom border-danger" id="ProductCategory" list="datalistOptions" placeholder="">
+                    <label for="ProductCategory">Product Category</label>
+
+                    <datalist id="datalistOptions">
+                        <option value="tv">
+                        <option value="Mobile">
+                        <option value="screens">
+                        <option value="electronics">
+                      </datalist>
+                  </div>
+
+                  <div id="validate-category-alert" class="alert alert-danger d-none">Category must be tv or tablet or electronics or tv only!</div>
+                  <div id="empty-category-alert" class="alert alert-danger d-none">Product Category Can't Be Empty!</div>
+
+
+                  <div class="form-floating mb-3" >
+                    <textarea class="form-control border-0 border-bottom border-danger" placeholder="" id="ProductDesc" style="height: 100px"></textarea>
+                    <label for="ProductDesc">Comments</label>
+                  </div>
+                  <div id="validate-comment-alert" class="alert alert-danger d-none">Comments must be from 10 char to 50 char!</div>
+
+                  <div class="form-floating mb-3">
+                    <input type="file" class="form-control border-0 border-bottom border-danger" id="ProductImage" placeholder="">
+                    <label for="ProductImage">Product Image</label>
+                  </div>
+
+                  <div class="btns">
+                    <button id="addBtn" class="btn btn-outline-danger" onclick="addProduct()">Add product</button>
+                    <button id="updateBtn" class="btn btn-outline-danger d-none" onclick="updateProduct()">Update product</button>
+                  </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="mb-3 w-50 mx-auto">
+                <input type="search" oninput="showAllProducts()" class="form-control" id="search-input" placeholder="Search here...">
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid">
+
+            <h2 class="text-primary text-center">Available Products</h2>
+            <div class="row gy-4" id="row">
+                <!-- <div class="col-md-4">
+                    <div class="inner">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="product-img">
+                                    <img src="images/product-img.jpg" alt="product image" class="w-100">
+                                </div>
+                                <span>product index</span>
+                                <h4 class="card-title">product name</h4>
+                                <p class="card-text">Product Price:price</p>
+                                <p class="card-text">Product Category:category</p>
+                                <p class="card-text">Product description:description</p>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <div class="buts text-center">
+                                    <button class="btn btn-success" onclick="setFormValues()" >Update</button>
+                                    <button class="btn btn-danger" onclick="deleteItem()">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
